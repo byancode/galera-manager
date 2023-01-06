@@ -4,17 +4,16 @@ This repository demonstrates, how we can run gmd in Docker.
 
 ## How to use
 
+1. Install
+  ```bash
+   mkdir -p $(echo $HOME)/gmd && cd $(echo $HOME)/gmd
+   curl -sSL https://raw.githubusercontent.com/byancode/galera-manager/master/docker-compose.yml > docker-compose.yml
+  ```
+
 1. Run:
 
    ```bash
-   docker run -d \
-      -e ADMIN_USER=admin \
-      -e ADMIN_PASSWORD=12345 \
-      -v $(echo $HOME)/gmd/configs:/var/lib/gmd:rw \
-      -v $(echo $HOME)/gmd/logs:/var/log/gmd:rw \
-      -p 8080:8080 \
-      --name gmd \
-      byancode/galera-manager
+   docker compose up -d
    ```
 
 1. Try accessing [http://localhost:8080/app](http://localhost:8080/app) in your browser.
@@ -22,7 +21,7 @@ This repository demonstrates, how we can run gmd in Docker.
 1. Stop:
 
    ```bash
-   docker stop gmd
+   docker compose down
    ```
 
 1. Remove persistent data:
