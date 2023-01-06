@@ -19,10 +19,10 @@ This repository demonstrates, how we can run gmd in Docker.
 
 1. Try accessing [http://localhost:8080/app](http://localhost:8080/app) in your browser.
 
-1. Uninstall:
+1. Stop:
 
    ```bash
-   docker-compose down
+   docker stop gmd
    ```
 
 1. Remove persistent data:
